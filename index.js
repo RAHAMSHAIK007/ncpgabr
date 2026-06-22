@@ -9,6 +9,13 @@ const server = http.createServer((req, res) => {
     res.end(JSON.stringify({ message: "Hello World from Node.js!" }));
 });
 
-server.listen(PORT, () => {
-    console.log(`Server running smoothly on port ${PORT}`);
-});
+// FIX: Only listen to the port if file is executed directly (npm start)
+// This prevents the server from starting automatically during tests
+if (require.main === module) {
+    server.listen(PORT, () => {
+        console.log(`Server running smoothly on port ${PORT}`);
+    });
+}
+
+// FIX: Export the server so server.test.js can import and test it cleanly
+module.exports = server;
