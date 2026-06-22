@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ message: "Hello World from Node.js!" }));
+    res.end(JSON.stringify({ message: "Hello World from Node.js version 2.0" }));
 });
 
 // FIX: Only listen to the port if file is executed directly (npm start)
