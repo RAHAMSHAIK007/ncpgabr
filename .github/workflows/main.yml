@@ -10,3 +10,6 @@ jobs:
 
       - name: print a second msg
         run: echo "thnaks for using me"
+
+      - name: cpu infor
+        run: lscpu
