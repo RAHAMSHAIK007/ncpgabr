@@ -5,11 +5,14 @@ jobs:
   job-1:
     runs-on: ubuntu-24.04
     steps:
-      - name: print a msg
-        run: echo "hello all form github actions"
+      - name: checkout
+        uses: actions/checkout@v7
 
-      - name: print a second msg
-        run: echo "thnaks for using me"
+      - name: install dependencies
+        run: npm install
 
-      - name: cpu infor
-        run: lscpu
+      - name: test
+        run: npm test
+
+      - name: starting the app
+        run: npm start
