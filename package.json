@@ -2,7 +2,7 @@
   "name": "node-basic-server",
   "version": "1.0.0",
   "description": "A basic native Node.js HTTP server with automation tests",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "node --test"
